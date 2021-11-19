@@ -22,7 +22,6 @@ class RoomForm(forms.ModelForm):
         model = Room
         fields = '__all__'
 
-
 class PaymentForm(forms.ModelForm):
     class Meta:
         model = Payment

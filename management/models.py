@@ -15,7 +15,9 @@ class Profile(models.Model):
 
 
 class Room(models.Model):
-    category = models.CharField(max_length=50)
+    ROOM_CATEGORY = [('single', "SINGLE"),
+                     ('share', "SHARE")]
+    category = models.CharField(max_length=50, choices=ROOM_CATEGORY, default="choose")
     rent = models.IntegerField()
     student = models.ForeignKey(Profile, on_delete=models.PROTECT, related_name='student')
 
