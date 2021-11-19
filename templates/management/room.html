@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>
+        Room login
+    </title>
+</head>
+<body>
+<div class="container">
+    <h1>Room login</h1>
+    <form method="POST">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+</div>
+</body>
+</html>
