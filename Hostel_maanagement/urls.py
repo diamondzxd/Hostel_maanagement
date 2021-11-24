@@ -21,6 +21,9 @@ from management import views, urls
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
-    path('users', include('management.urls')),
-    path('room/', views.rooms, name='room')
+    path('AddUser/', views.AddUser),
+    path('room/', views.AddRoom, name='room'),
+    path('DisplayStudents/', views.DisplayStudents),
+    path('DeleteStudent/<id>', views.DeleteStudent)
+
 ]
