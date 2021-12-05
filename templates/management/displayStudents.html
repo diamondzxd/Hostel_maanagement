@@ -23,9 +23,11 @@
         <td>{{ student.first_name }} {{student.last_name}}</td>
         <td>{{ student.email }}</td>
         <td>{{ student.phone }}</td>
-        <td>Update | <a href="/DeleteStudent/{{student.id}}">Delete</a></td>
+        <td><a href="/UpdateUser/{{student.id}}">Update</a> | <a href="/DeleteStudent/{{student.id}}">Delete</a></td>
     </tr>
     {% endfor %}
+
+
 </table>
 
 </body>

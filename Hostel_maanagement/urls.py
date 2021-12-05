@@ -21,9 +21,11 @@ from management import views, urls
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
-    path('AddUser/', views.AddUser),
+    path('AddUser/', views.RegisterUser),
     path('room/', views.AddRoom, name='room'),
     path('DisplayStudents/', views.DisplayStudents),
-    path('DeleteStudent/<id>', views.DeleteStudent)
+    path('DeleteStudent/<id>', views.DeleteStudent),
+    path('UpdateUser/<id>', views.UpdateUser),
+    path('DisplayRoom/', views.DisplayRoom),
 
 ]

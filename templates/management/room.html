@@ -3,15 +3,55 @@
     <title>
         Room login
     </title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
 </head>
 <body>
-<div class="container">
-    <h1>Room login</h1>
-    <form method="POST">
-        {{form.as_p}}
-        {% csrf_token %}
-        <input type="submit" class="btn btn-primary" value="Submit">
-    </form>
+<div class="container-md">
+        <br>
+        <h4>Room Details</h4>
+    <hr>
+        <form method="POST" class="row g-3" >
+<!--            <div class="row g-3">-->
+<!--                <div class="col-md-2">-->
+<!--                    <label for="student" class="form-label">Student: </label>-->
+<!--                    <select class="form-select" aria-label="Default select example">-->
+<!--                    <option value= {{form.student}} > </option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--            <div class="row g-3">-->
+<!--                <div class="col-md-2">-->
+<!--                    <label for="category" class="form-label" >Category: </label>-->
+<!--                    <select class="form-select" aria-label="Default select example">-->
+<!--                    <option value={{form.category}} > </option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--                <div class="col-sm-4">-->
+<!--              <label for="rent" class="form-label">Rental price: </label>-->
+<!--                {{form.rent}}-->
+<!--                </div>-->
+<!--            <div class="row g-3">-->
+<!--                <div class="col-md-4">-->
+<!--              `<label for="vacant" class="form-label"> Vacant: </label>-->
+<!--                {{form.vacant}}-->
+<!--                </div>-->
+<!--                <div class="col-12">-->
+<!--                    <input type="submit" class="btn btn-primary" value="Submit">-->
+<!--                </div>-->
+<!--            </div>-->
+
+{{ form.as_p }}
+<!--            {% csrf_token %}-->
+    <!--<div class="container-md">-->
+<!--        <br>-->
+<!--        <h4>Please sign up here</h4>-->
+<!--    <hr>-->
+<!--        <form method="POST" class="row g-3" novalidate>-->
+<!--         {{ form.as_p }}-->
+            {% csrf_token %}
+<input type="submit" class="btn btn-primary" value="Submit">
+        </form>
 </div>
 </body>
 </html>
