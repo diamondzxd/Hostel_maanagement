@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-from management.models import Profile, Room, Payment, Subscription
+from management.models import Student, Room, Payment
 
 
 #
@@ -14,7 +14,7 @@ from management.models import Profile, Room, Payment, Subscription
 
 class ProfileForm(forms.ModelForm):
     class Meta:
-        model = Profile
+        model = Student
         fields = '__all__'
 
     first_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'First Name', 'class': 'form-control'}))
@@ -47,7 +47,7 @@ class PaymentForm(forms.ModelForm):
         fields = '__all__'
 
 
-class SubscriptionForm(forms.ModelForm):
-    class Meta:
-        model = Subscription
-        fields = '__all__'
+# class SubscriptionForm(forms.ModelForm):
+#     class Meta:
+#         model = Subscription
+#         fields = '__all__'

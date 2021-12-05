@@ -27,5 +27,6 @@ urlpatterns = [
     path('DeleteStudent/<id>', views.DeleteStudent),
     path('UpdateUser/<id>', views.UpdateUser),
     path('DisplayRoom/', views.DisplayRoom),
+    path('ViewStudents/<id>', views.ViewStudents)
 
 ]

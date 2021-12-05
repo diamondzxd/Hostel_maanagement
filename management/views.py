@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from management.models import Profile, Room
+from management.models import Student, Room
 from management.forms import ProfileForm, PaymentForm, RoomForm
 
 
@@ -26,18 +26,18 @@ def RegisterUser(request):
 def UpdateUser(request, id):
     method = request.method
     if method == 'GET':
-        student = Profile.objects.filter(id=id).values().first()
+        student = Student.objects.filter(id=id).values().first()
         data = {'form': ProfileForm(student)}
         return render(request, 'management/user.html', data)
     elif method == 'POST':
-        student = Profile.objects.get(id=id)
+        student = Student.objects.get(id=id)
         form = ProfileForm(request.POST, instance=student)
         form.save()
         return redirect('/DisplayStudents/')
 
 
 def DisplayStudents(request):
-    students = Profile.objects.all()
+    students = Student.objects.all()
     room = Room.objects.all()
     details = {'students': students, 'room': room}
     # SELECT * FROM profile
@@ -45,7 +45,7 @@ def DisplayStudents(request):
 
 
 def DeleteStudent(request, id):
-    student = Profile.objects.get(id=id)
+    student = Student.objects.get(id=id)
     student.delete()
     return redirect('/DisplayStudents/')
 
@@ -79,5 +79,9 @@ def AddRoom(request):
 def DisplayRoom(request):
     rooms = Room.objects.all()
     details = {'rooms': rooms}
-    print(details)
     return render(request, 'management/displayRoom.html', details)
+
+def ViewStudents(request,id):
+    room = Room.objects.get(id=id)
+    students = room.student_set.all()
+    return HttpResponse(students)
